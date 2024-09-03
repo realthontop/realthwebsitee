@@ -10,12 +10,12 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            overflow: hidden; /* Para evitar el scroll mientras se anima */
-            background-color: #000; /* Fondo negro */
+            background-color: #000; /* Fondo negro para toda la página */
             color: #fff; /* Texto blanco */
             display: flex;
             flex-direction: column;
             height: 100vh; /* Asegura que el body tenga la altura completa de la ventana */
+            overflow: hidden;
         }
 
         header {
@@ -35,24 +35,79 @@
             font-size: 18px; /* Tamaño del texto en el header */
             margin: 0 15px; /* Espacio horizontal entre los enlaces */
         }
-        
-        /* Estilo del enlace en hover */
+
         nav a:hover {
             color: #00bfff; /* Color más claro en hover */
         }
 
-        main {
-            opacity: 0;
-            transform: translateY(100%);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            padding: 80px 20px 20px; /* Espacio interno en el contenedor principal, añadiendo espacio en la parte superior para el header fijo */
-            flex: 1; /* Permite que el main ocupe el espacio disponible */
-            text-align: center; /* Centra el texto del main */
+        .text-area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            text-align: center;
+            z-index: 15; /* Asegura que el área de texto esté sobre otros elementos */
         }
 
-        body.loaded main {
-            opacity: 1;
-            transform: translateY(0);
+        .text-area h2 {
+            margin-top: 0;
+            font-size: 28px; /* Tamaño del título dentro del área de texto */
+        }
+
+        .text-area p {
+            font-size: 18px; /* Tamaño del texto */
+            line-height: 1.5; /* Espacio entre líneas */
+        }
+
+        .secret-area {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 300px;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.8); /* Fondo oscuro para el área secreta */
+            color: #fff;
+            padding: 20px;
+            display: none; /* Oculta el área secreta por defecto */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para el área secreta */
+            z-index: 20; /* Asegura que el área secreta esté sobre otros elementos */
+        }
+
+        .secret-area h3 {
+            font-size: 24px; /* Tamaño del título en el área secreta */
+            margin-top: 0;
+        }
+
+        .secret-area p {
+            font-size: 18px; /* Tamaño del texto en el área secreta */
+            margin-top: 10px;
+        }
+
+        .secret-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 30px; /* Tamaño pequeño del botón */
+            height: 30px;
+            background-color: transparent; /* Fondo transparente */
+            color: #fff;
+            text-align: center;
+            line-height: 30px; /* Centra el texto verticalmente */
+            font-size: 3px; /* Tamaño del icono */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+            z-index: 20; /* Asegura que el botón esté sobre otros elementos */
+        }
+
+        .secret-button:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Color de fondo del botón en hover */
         }
     </style>
 </head>
@@ -64,14 +119,31 @@
             <a href="contacto.html">Contacto</a>
         </nav>
     </header>
-    <main>
-        <h1>¡Bienvenido a la página oficial de Realth!</h1>
-        <p>En esta página podrás ver todo lo que necesites saber sobre la página. ¡Actualmente estamos en mantenimiento y actualizándonos!</p>
-    </main>
+
+    <!-- Área de texto en el centro de la pantalla (solo lectura) -->
+    <div class="text-area">
+        <h2>🎉Bienvenido a Realth!🎉</h2>
+        <p>La pagina principal (ESTA) esta actualmente en mantenimiento, cuando este todo correctamente funcional se anunciara en nuestro canal de anuncios, si no tienes nuestro discord official entra a la categoria de "Contacto" y ahi encontraras el discord official!, Ah y para acordate hay un 🔎EASTER EGG🔎 en esta pagina!.</p>
+    </div>
+
+    <!-- Área secreta -->
+    <div class="secret-area" id="secretArea">
+        <h3>¡Felicidades!</h3>
+        <p>Has encontrado la categoría secreta. ¿Qué beneficio te da esto? Abre un ticket para recibir el gen premium por 2 días totalmente gratis.</p>
+    </div>
+
+    <!-- Botón para activar el área secreta -->
+    <div class="secret-button" id="secretButton">🔍</div>
 
     <script>
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
+        // JavaScript para mostrar el área secreta al hacer clic en el botón
+        document.getElementById('secretButton').addEventListener('click', function() {
+            var secretArea = document.getElementById('secretArea');
+            if (secretArea.style.display === 'none' || secretArea.style.display === '') {
+                secretArea.style.display = 'block';
+            } else {
+                secretArea.style.display = 'none';
+            }
         });
     </script>
 </body>
