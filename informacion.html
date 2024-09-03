@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💻Realth website💻</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo inicial de la página */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Para evitar el scroll mientras se anima */
+            background-image: url('foto-main.png'); /* Reemplaza con la ruta de tu imagen */
+            background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            color: #fff; /* Texto blanco */
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Asegura que el body tenga la altura completa de la ventana */
+        }
+
+        header {
+            text-align: center; /* Centra el contenido del header */
+            padding: 20px; /* Espacio alrededor del contenido del header */
+            position: fixed; /* Fija el header en la parte superior */
+            width: 100%; /* Asegura que el header ocupe todo el ancho */
+            top: 0; /* Ubica el header en la parte superior */
+            left: 0; /* Alinea el header a la izquierda */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-translúcido para el header */
+            z-index: 10; /* Asegura que el header esté sobre el contenido */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e90ff; /* Azul claro para el enlace */
+            font-size: 18px; /* Tamaño del texto en el header */
+            margin: 0 15px; /* Espacio horizontal entre los enlaces */
+        }
+        
+        /* Estilo del enlace en hover */
+        nav a:hover {
+            color: #00bfff; /* Color más claro en hover */
+        }
+
+        main {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            padding: 80px 20px 20px; /* Espacio interno en el contenedor principal, añadiendo espacio en la parte superior para el header fijo */
+            flex: 1; /* Permite que el main ocupe el espacio disponible */
+            text-align: center; /* Centra el texto del main */
+            background: rgba(0, 0, 0, 0.6); /* Fondo negro semi-translúcido para mejorar la legibilidad del texto */
+        }
+
+        body.loaded main {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 36px; /* Tamaño del texto del título */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+
+        p {
+            font-size: 24px; /* Tamaño del texto del párrafo */
+            line-height: 1.5; /* Espacio entre líneas para mayor legibilidad */
+        }
+
+        .owners {
+            margin-top: 40px; /* Espacio arriba del apartado Owners */
+            display: flex; /* Usa flexbox para alinear los elementos hijos en una fila */
+            justify-content: center; /* Centra los elementos en el contenedor */
+            gap: 20px; /* Espacio entre los elementos */
+        }
+
+        .owner {
+            max-width: 300px; /* Ajusta el ancho máximo de la imagen */
+            text-align: center; /* Centra el texto dentro del contenedor del owner */
+        }
+
+        .owner img {
+            width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+            border-radius: 10px; /* Bordes redondeados para la imagen */
+        }
+
+        .owner p {
+            font-size: 20px; /* Tamaño del texto debajo de la imagen */
+            margin-top: 10px; /* Espacio arriba del texto */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="informacion.html">Sobre Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Sobre Nosotros</h1>
+        <p>Somos una tienda digital en Discord. Este proyecto inicio en 2022. cuando se llamaba dolphin en 2023 principio se cambio a dexx y a medias de 2023 nos raidearon/hackearon el discord. Despues de 2 meses volvimos y creamos 742 store. para despues de meses pasar a ser "Realth" como esta hoy en dia. </p>
+
+        <div class="owners">
+            <div class="owner">
+                <img src="wrld.png" alt="Wrld"> <!-- Reemplaza con la ruta de la imagen del primer owner -->
+                <p>Wrld</p> <!-- Nombre o descripción del primer owner -->
+            </div>
+
+            <div class="owner">
+                <img src="yo.png" alt="kxluc"> <!-- Reemplaza con la ruta de la imagen del segundo owner -->
+                <p>kxluc</p> <!-- Nombre o descripción del segundo owner -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

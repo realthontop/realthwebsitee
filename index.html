@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💻Realth website💻</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo inicial de la página */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Para evitar el scroll mientras se anima */
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Asegura que el body tenga la altura completa de la ventana */
+        }
+
+        header {
+            text-align: center; /* Centra el contenido del header */
+            padding: 20px; /* Espacio alrededor del contenido del header */
+            position: fixed; /* Fija el header en la parte superior */
+            width: 100%; /* Asegura que el header ocupe todo el ancho */
+            top: 0; /* Ubica el header en la parte superior */
+            left: 0; /* Alinea el header a la izquierda */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-translúcido para el header */
+            z-index: 10; /* Asegura que el header esté sobre el contenido */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e90ff; /* Azul claro para el enlace */
+            font-size: 18px; /* Tamaño del texto en el header */
+            margin: 0 15px; /* Espacio horizontal entre los enlaces */
+        }
+        
+        /* Estilo del enlace en hover */
+        nav a:hover {
+            color: #00bfff; /* Color más claro en hover */
+        }
+
+        main {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            padding: 80px 20px 20px; /* Espacio interno en el contenedor principal, añadiendo espacio en la parte superior para el header fijo */
+            flex: 1; /* Permite que el main ocupe el espacio disponible */
+            text-align: center; /* Centra el texto del main */
+        }
+
+        body.loaded main {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="informacion.html">Sobre Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <h1>¡Bienvenido a la página oficial de Realth!</h1>
+        <p>En esta página podrás ver todo lo que necesites saber sobre la página. ¡Actualmente estamos en mantenimiento y actualizándonos!</p>
+    </main>
+
+    <script>
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

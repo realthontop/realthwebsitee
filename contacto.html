@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💻Realth website💻</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo inicial de la página */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Para evitar el scroll mientras se anima */
+            background-image: url('foto-main.png'); /* Reemplaza con la ruta de tu imagen */
+            background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            color: #fff; /* Texto blanco */
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Asegura que el body tenga la altura completa de la ventana */
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semi-translúcido para el header */
+            padding: 20px; /* Espacio alrededor del contenido del header */
+            text-align: center; /* Centra el contenido del header */
+            position: fixed; /* Fija el header en la parte superior */
+            width: 100%; /* Asegura que el header ocupe todo el ancho */
+            top: 0; /* Ubica el header en la parte superior */
+            left: 0; /* Alinea el header a la izquierda */
+            z-index: 10; /* Asegura que el header esté sobre el contenido */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e90ff; /* Azul claro para el enlace, puedes cambiar el color si prefieres otro */
+            font-size: 24px; /* Tamaño del texto en el header */
+        }
+        
+        /* Estilo del enlace en hover */
+        nav a:hover {
+            color: #00bfff; /* Color más claro en hover */
+        }
+
+        main {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            padding: 80px 20px 20px; /* Espacio interno en el contenedor principal, añadiendo espacio en la parte superior para el header fijo */
+            text-align: center; /* Centra el texto del main */
+            flex: 1; /* Permite que el main ocupe el espacio restante */
+            background: rgba(0, 0, 0, 0.6); /* Fondo negro semi-translúcido para el main */
+        }
+
+        body.loaded main {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilo del contenido principal */
+        h1 {
+            font-size: 36px; /* Tamaño del texto del título */
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+
+        p {
+            font-size: 24px; /* Tamaño del texto del párrafo */
+        }
+
+        .discord-link {
+            color: #1e90ff; /* Azul claro para el enlace de Discord */
+            text-decoration: none; /* Sin subrayado */
+            font-weight: bold; /* Negrita para destacar el enlace */
+        }
+
+        .discord-link:hover {
+            color: #00bfff; /* Color más claro en hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+        </nav>
+    </header>
+    <main>
+        <h1>¿Necesitas ayuda? ¡Contáctanos!</h1>
+        <p>Únete a nuestro <a href="https://discord.gg/realth" class="discord-link" target="_blank">Discord oficial</a> para más información y soporte.</p>
+    </main>
+
+    <script>
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
