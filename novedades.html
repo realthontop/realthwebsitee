@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📰 Novedades - Realth</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo inicial de la página */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Fondo negro para toda la página */
+            color: #fff; /* Texto blanco */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asegura que el body tenga la altura completa de la ventana */
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center; /* Centra el contenido del header */
+            padding: 20px; /* Espacio alrededor del contenido del header */
+            position: fixed; /* Fija el header en la parte superior */
+            width: 100%; /* Asegura que el header ocupe todo el ancho */
+            top: 0; /* Ubica el header en la parte superior */
+            left: 0; /* Alinea el header a la izquierda */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-translúcido para el header */
+            z-index: 10; /* Asegura que el header esté sobre el contenido */
+            transform: translateY(-100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e90ff; /* Azul claro para el enlace */
+            font-size: 18px; /* Tamaño del texto en el header */
+            margin: 0 15px; /* Espacio horizontal entre los enlaces */
+        }
+
+        nav a:hover {
+            color: #00bfff; /* Color más claro en hover */
+        }
+
+        .content {
+            flex-grow: 1; /* Hace que el contenido ocupe el espacio disponible */
+            margin-top: 100px; /* Deja espacio para el header */
+            padding: 20px;
+            overflow-y: auto; /* Permite desplazamiento si el contenido es largo */
+        }
+
+        .update {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px; /* Espacio entre actualizaciones */
+        }
+
+        .update h3 {
+            margin-top: 0;
+            font-size: 22px; /* Tamaño del título de la actualización */
+        }
+
+        .update p {
+            font-size: 18px; /* Tamaño del texto de la actualización */
+            line-height: 1.5; /* Espacio entre líneas */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="informacion.html">Sobre Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="novedades.html">Novedades</a>
+        </nav>
+    </header>
+
+    <!-- Área de contenido de Novedades -->
+    <div class="content">
+        <h2>Últimas Novedades</h2>
+
+        <!-- Ejemplo de una actualización -->
+        <div class="update">
+            <h3>Actualización 1 - 01/09/2024</h3>
+            <p>Se ha realizado la implementación de la nueva interfaz para usuarios, con mejoras en el rendimiento y la seguridad🙌.</p>
+        </div>
+
+        <!-- Otra actualización -->
+        <div class="update">
+            <h3>Actualización 2 - 02/09/2024</h3>
+            <p>Hemos corregido varios errores reportados en la versión anterior, mejorando la experiencia de usuario😉.</p>
+        </div>
+
+        <!-- Continúa añadiendo más actualizaciones aquí -->
+    </div>
+
+    <script>
+        // JavaScript para manejar la animación de aparición
+        window.addEventListener('load', function() {
+            document.querySelector('header').style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+</html>
